@@ -31,7 +31,8 @@ jobs:
         working-directory: aws_api
         run: dotnet restore
       - name: Build
-        run: dotnet build --no-restore aws_test.sln
+        working-directory: aws_api
+        run: dotnet build --no-restore
       - name: Deploy to Lambda
         working-directory: aws_api
         run: dotnet lambda deploy-serverless
