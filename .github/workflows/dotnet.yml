@@ -8,14 +8,14 @@ on:
 
 defaults:
   run:
-    working-directory: ../aws_api/Services
+    working-directory: aws_api/Services
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
     env:
-      working-directory: ../aws_api/Services
+      working-directory: aws_api/Services
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
@@ -32,5 +32,5 @@ jobs:
       - name: Build
         run: dotnet build --no-restore aws_test.sln
       - name: Deploy to Lambda
-        working-directory: ../aws_api/Services/ApiServices
+        working-directory: aws_api/Services/ApiServices
         run: dotnet lambda deploy-serverless
