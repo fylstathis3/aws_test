@@ -32,6 +32,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore aws_api.sln
     - name: Deploy to Lambda
-      working-directory: ./ApiServices
+#       working-directory: .
       run: dotnet lambda deploy-serverless
 
