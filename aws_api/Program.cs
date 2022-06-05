@@ -5,7 +5,7 @@ builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello Worlds!!!!!!!!");
+app.MapGet("/", () => "Hello Aimilia");
 app.UseSwagger();
 app.UseSwaggerUI();
 app.Run();
