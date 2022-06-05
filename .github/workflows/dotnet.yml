@@ -28,7 +28,8 @@ jobs:
       - name: AWS CLI
         run: dotnet tool install -g Amazon.Lambda.Tools
       - name: Restore dependencies
-        run: dotnet restore aws_test.sln
+        working-directory: aws_api
+        run: dotnet restore
       - name: Build
         run: dotnet build --no-restore aws_test.sln
       - name: Deploy to Lambda
