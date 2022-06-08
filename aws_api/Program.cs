@@ -22,9 +22,10 @@ var connectionFactory = new RabbitMQ.Client.ConnectionFactory()
 {
     Uri=  new Uri(url)
 };
+
 var connection = connectionFactory.CreateConnection();
 var channel = connection.CreateModel();
-channel.QueueDeclare(queueName, false, true, false, null);
+channel.QueueDeclare(queueName, true, true, false, null);
 channel.BasicPublish("", queueName, false, null, bytes);
 
 var consumer = new RabbitMQ.Client.Events.EventingBasicConsumer(channel);
