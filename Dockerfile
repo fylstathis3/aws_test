@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["aws_test.csproj", "aws_api/"]
+COPY ["aws_test.csproj", "aws_test/"]
 RUN dotnet restore "aws_test.csproj"
 COPY . .
 WORKDIR "/src/aws_test"
@@ -17,4 +17,4 @@ RUN dotnet publish "aws_test.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "aws_api.dll"]
+ENTRYPOINT ["dotnet", "aws_test.dll"]
