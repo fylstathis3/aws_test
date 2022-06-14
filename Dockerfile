@@ -6,7 +6,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["aws_test.csproj", "aws_test/"]
-RUN dotnet restore "aws_test/aws_test.csproj"
+RUN dotnet restore "/aws_test/aws_test.csproj"
 COPY . .
 WORKDIR "/src/aws_test"
 RUN dotnet build "aws_test.csproj" -c Release -o /app/build
