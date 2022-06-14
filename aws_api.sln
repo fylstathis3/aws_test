@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aws_api", "aws_api\aws_api.csproj", "{7BCCF3CB-06C1-4AB7-9D38-B3B22C9AF6BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aws_test", "aws_test\aws_test.csproj", "{7BCCF3CB-06C1-4AB7-9D38-B3B22C9AF6BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
